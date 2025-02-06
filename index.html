@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeditepe Seven Racing Team</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap&subset=latin-ext">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&display=swap&subset=latin-ext" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#home" class="logo">
+            <img src="images/team_logo.png" alt="Yeditepe Seven Racing">
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="#home">
+                <span data-lang="en">Home</span>
+                <span data-lang="tr" class="hidden">Ana Sayfa</span>
+            </a></li>
+            
+            <li><a href="#about">
+                <span data-lang="en">About</span>
+                <span data-lang="tr" class="hidden">Hakkımızda</span>
+            </a></li>
+            
+            <li><a href="#team">
+                <span data-lang="en">Team</span>
+                <span data-lang="tr" class="hidden">Ekip</span>
+            </a></li>
+            
+            <li><a href="#social">
+                <span data-lang="en">Social</span>
+                <span data-lang="tr" class="hidden">Sosyal</span>
+            </a></li>
+            
+            <li><a href="#contact">
+                <span data-lang="en">Contact</span>
+                <span data-lang="tr" class="hidden">İletişim</span>
+            </a></li>
+        </ul>
+        
+        <button id="langToggle" class="lang-toggle" data-lang="en">TR</button>
+        
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="title-container">
+                <h1 data-lang="en">YEDİTEPE SEVEN RACING TEAM</h1>
+                <h1 data-lang="tr" class="hidden">YEDİTEPE SEVEN RACING TAKIMI</h1>
+            </div>
+            <div class="stats-grid">
+                <div class="stat">
+                    <span class="number">76</span>
+                    <span data-lang="en">Members</span>
+                    <span data-lang="tr" class="hidden">Üye</span>
+                </div>
+                <div class="stat">
+                    <span class="number">00+</span>
+                    <span data-lang="en">More number datas...</span>
+                    <span data-lang="tr" class="hidden">Daha fazla sayısal veri...</span>
+                </div>
+                <!-- More stats... -->
+            </div>
+        </div>
+        <div class="wave-divider">
+            <svg><!-- Wave SVG path --></svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 data-lang="en" data-animate>Our Legacy</h2>
+            <h2 data-lang="tr" class="hidden" data-animate>Mirasımız</h2>
+
+            <div class="about-text" data-animate>
+                <div data-lang="en">
+                    <p>Seven Racing, organized under Yeditepe University Mechanical Engineering Department, is a racing team that brings engineering students together and encourages them to work together on competition projects. We are preparing to successfully represent our country in the Shell Eco Marathon 2025 Competition in the Internal Combustion Engine Prototype Concept.</p>
+                    <p>As a passionate and dedicated team, our goal is not only to design vehicles, but also to be part of a movement that supports sustainability and innovation. In the days to come, we aim to expand our team's sphere of influence by growing and developing further, and to inspire those who will take our place.</p>
+                </div>
+                <div data-lang="tr" class="hidden">
+                    <p>Yeditepe Üniversitesi Makine Mühendisliği Bölümü çatısı altında kurulan Seven Racing, mühendislik öğrencilerini bir araya getiren ve yarışma projeleri üzerinde birlikte çalışmaya teşvik eden bir otomobil takımıdır. Shell Eco Marathon 2025 Yarışması'nda İçten Yanmalı Motor Prototip Konsept kategorisinde ülkemizi başarıyla temsil etmek için hazırlanıyoruz.</p>
+                    <p>Tutkulu ve özverili bir ekip olarak amacımız sadece araçlar tasarlamak değil, aynı zamanda sürdürülebilirlik ve inovasyonu destekleyen bir hareketin parçası olmaktır. Önümüzdeki günlerde takımımızı büyüterek ve geliştirerek etki alanımızı genişletmeyi ve yerimizi alacak olanlara ilham vermeyi hedefliyoruz.</p>
+                </div>
+            </div>
+
+            <!-- New combined timeline and vehicles container -->
+            <div class="about-content-grid">
+                <!-- Timeline -->
+                <div class="timeline">
+                    <div class="timeline-item" data-animate>
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content">
+                            <h3 data-lang="en">Team Foundation</h3>
+                            <h3 data-lang="tr" class="hidden">Takım Kuruluşu</h3>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-animate>
+                        <div class="timeline-year">2024-2025</div>
+                        <div class="timeline-content">
+                            <h3 data-lang="en">Shell Eco-Marathon Europe and Africa 2025 - Poland</h3>
+                            <h3 data-lang="tr" class="hidden">Shell Eco-Marathon Avrupa ve Afrika 2025 - Polonya</h3>
+                        </div>
+                    </div>
+                    <!-- More timeline items -->
+                </div>
+
+                <!-- Vehicle Cards -->
+                <div class="vehicle-grid">
+                    <div class="vehicle-card" data-animate>
+                        <div class="vehicle-image">
+                            <img src="images/car_2025.jpeg" alt="Current Model" loading="lazy">
+                        </div>
+                        <div class="vehicle-specs">
+                            <h3 data-lang="en">"VEHICLE NAME"</h3>
+                            <h3 data-lang="tr" class="hidden">"ARAÇ ADI"</h3>
+                            <ul>
+                                <li>"araçla alakalı info 1 (sürtünme katsayısı, motor gücü, vs.)"</li>
+                                <li>"aracın verimliliğiyle alakalı info?"</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- More vehicle cards -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section">
+        <div class="container">
+            <h2 data-lang="en" data-animate>Meet the Crew</h2>
+            <h2 data-lang="tr" class="hidden" data-animate>Ekibimizle Tanışın</h2>
+            
+            <div class="leadership-scroll">
+                <!-- Team Leadership -->
+                <div class="member-card">
+                    <div class="member-content">
+                        <img src="images/members/Furkan_Yilmaztekin.jpeg" alt="Team Leader">
+                        <div class="member-info">
+                            <h3>Furkan Yılmaztekin</h3>
+                            <p class="role" data-lang="en">Team Leader</p>
+                            <p class="role hidden" data-lang="tr">Takım Lideri</p>
+                        </div>
+                        <a href="https://www.linkedin.com/in/furkan-y%C4%B1lmaztekin-620935179/" class="linkedin-overlay" target="_blank" aria-label="LinkedIn">
+                            <svg class="linkedin-icon"><use xlink:href="#linkedin-icon"></svg>
+                            <span data-lang="en">Connect</span>
+                            <span data-lang="tr" class="hidden">Bağlan</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Assistant Team Leader -->
+                <div class="member-card">
+                    <div class="member-content">
+                        <img src="images/members/Hilal_Zeynep_Yilmaz.jpeg" alt="Assistant Leader">
+                        <div class="member-info">
+                            <h3>Hilal Zeynep Yılmaz</h3>
+                            <p class="role" data-lang="en">Assistant Leader</p>
+                            <p class="role hidden" data-lang="tr">Lider Yardımcısı</p>
+                        </div>
+                        <a href="https://www.linkedin.com/in/hilal-zeynep-y%C4%B1lmaz-220846283/" class="linkedin-overlay" target="_blank" aria-label="LinkedIn">
+                            <svg class="linkedin-icon"><use xlink:href="#linkedin-icon"></svg>
+                            <span data-lang="en">Connect</span>
+                            <span data-lang="tr" class="hidden">Bağlan</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mechanics Co-Leaders -->
+                <div class="member-card">
+                    <div class="member-content">
+                        <img src="images/members/Batuhan_Sonmez.jpeg" alt="Mechanics Lead">
+                        <div class="member-info">
+                            <h3>Batuhan Sönmez</h3>
+                            <p class="role" data-lang="en">Mechanics Co-Lead</p>
+                            <p class="role hidden" data-lang="tr">Mekanik Ekibi Lideri</p>
+                        </div>
+                        <a href="https://www.linkedin.com/in/batuhansonmez2/" class="linkedin-overlay" target="_blank" aria-label="LinkedIn">
+                            <svg class="linkedin-icon"><use xlink:href="#linkedin-icon"></svg>
+                            <span data-lang="en">Connect</span>
+                            <span data-lang="tr" class="hidden">Bağlan</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-content">
+                        <img src="images/members/Mustafa_Cinar.jpeg" alt="Mechanics Lead">
+                        <div class="member-info">
+                            <h3>Mustafa Çınar</h3>
+                            <p class="role" data-lang="en">Mechanics Co-Lead</p>
+                            <p class="role hidden" data-lang="tr">Mekanik Ekibi Lideri</p>
+                        </div>
+                        <a href="https://www.linkedin.com/in/mustafa-%C3%A7%C4%B1nar-155717259/" class="linkedin-overlay" target="_blank" aria-label="LinkedIn">
+                            <svg class="linkedin-icon"><use xlink:href="#linkedin-icon"></svg>
+                            <span data-lang="en">Connect</span>
+                            <span data-lang="tr" class="hidden">Bağlan</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Electrical & Software -->
+                <div class="member-card">
+                    <div class="member-content">
+                        <img src="images/members/Arhan_Burak_Tuzun.jpeg" alt="Electrical Lead">
+                        <div class="member-info">
+                            <h3>Arhan Burak Tüzün</h3>
+                            <p class="role" data-lang="en">Electrical & Software Lead</p>
+                            <p class="role hidden" data-lang="tr">Elektrik & Yazılım Ekipleri Lideri</p>
+                        </div>
+                        <a href="https://www.linkedin.com/in/arhanburak/" class="linkedin-overlay" target="_blank" aria-label="LinkedIn">
+                            <svg class="linkedin-icon"><use xlink:href="#linkedin-icon"></svg>
+                            <span data-lang="en">Connect</span>
+                            <span data-lang="tr" class="hidden">Bağlan</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PR & Social Media -->
+                <div class="member-card">
+                    <div class="member-content">
+                        <img src="images/members/Irem_Armakan.jpeg" alt="PR Lead">
+                        <div class="member-info">
+                            <h3>İrem Armakan</h3>
+                            <p class="role" data-lang="en">PR Lead</p>
+                            <p class="role hidden" data-lang="tr">Halkla İlişkiler Lideri</p>
+                        </div>
+                        <a href="https://www.linkedin.com/in/irem-armakan-b96679299/" class="linkedin-overlay" target="_blank" aria-label="LinkedIn">
+                            <svg class="linkedin-icon"><use xlink:href="#linkedin-icon"></svg>
+                            <span data-lang="en">Connect</span>
+                            <span data-lang="tr" class="hidden">Bağlan</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-content">
+                        <img src="images/members/Deha_Unlu.jpeg" alt="Social Media Lead">
+                        <div class="member-info">
+                            <h3>Deha Ünlü</h3>
+                            <p class="role" data-lang="en">Social Media Lead</p>
+                            <p class="role hidden" data-lang="tr">Sosyal Medya Ekibi Lideri</p>
+                        </div>
+                        <a href="https://www.linkedin.com/in/deha-%C3%BCnl%C3%BC-525aaa324/" class="linkedin-overlay" target="_blank" aria-label="LinkedIn">
+                            <svg class="linkedin-icon"><use xlink:href="#linkedin-icon"></svg>
+                            <span data-lang="en">Connect</span>
+                            <span data-lang="tr" class="hidden">Bağlan</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Executive Assistants -->
+                <div class="member-card">
+                    <div class="member-content">
+                        <img src="images/members/Melis_Erkal.jpeg" alt="Executive Assistant">
+                        <div class="member-info">
+                            <h3>Melis Erkal</h3>
+                            <p class="role" data-lang="en">Executive Assistant</p>
+                            <p class="role hidden" data-lang="tr">Yönetici Asistanı</p>
+                        </div>
+                        <a href="https://www.linkedin.com/in/melis-erkal/" class="linkedin-overlay" target="_blank" aria-label="LinkedIn">
+                            <svg class="linkedin-icon"><use xlink:href="#linkedin-icon"></svg>
+                            <span data-lang="en">Connect</span>
+                            <span data-lang="tr" class="hidden">Bağlan</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-content">
+                        <img src="images/members/Samed_Sengun.jpeg" alt="Executive Assistant">
+                        <div class="member-info">
+                            <h3>Samed Şengün</h3>
+                            <p class="role" data-lang="en">Executive Assistant</p>
+                            <p class="role hidden" data-lang="tr">Yönetici Asistanı</p>
+                        </div>
+                        <a href="https://www.linkedin.com/in/samed-%C5%9Feng%C3%BCn-417112286/" class="linkedin-overlay" target="_blank" aria-label="LinkedIn">
+                            <svg class="linkedin-icon"><use xlink:href="#linkedin-icon"></svg>
+                            <span data-lang="en">Connect</span>
+                            <span data-lang="tr" class="hidden">Bağlan</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-content">
+                        <img src="images/members/Yigit_Erbay.jpeg" alt="Executive Assistant">
+                        <div class="member-info">
+                            <h3>Yiğit Erbay</h3>
+                            <p class="role" data-lang="en">Executive Assistant</p>
+                            <p class="role hidden" data-lang="tr">Yönetici Asistanı</p>
+                        </div>
+                        <a href="https://www.linkedin.com/in/yigit-erbay-7b1445295/" class="linkedin-overlay" target="_blank" aria-label="LinkedIn">
+                            <svg class="linkedin-icon"><use xlink:href="#linkedin-icon"></svg>
+                            <span data-lang="en">Connect</span>
+                            <span data-lang="tr" class="hidden">Bağlan</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Section -->
+    <section id="social" class="section">
+        <div class="container">
+            <h2 data-animate data-lang="en">Connect With Us</h2>
+            <h2 data-animate data-lang="tr" class="hidden">Sosyal Medya</h2>
+
+            <!-- Instagram Widget -->
+            <script src="https://static.elfsight.com/platform/platform.js" async></script>
+            <div class="elfsight-app-6142df9c-eb16-41c2-95cd-929aa76329d6" data-elfsight-app-lazy></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 data-animate data-lang="en">Contact Us</h2>
+            <h2 data-animate data-lang="tr" class="hidden">İletişim</h2>
+
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info" data-animate>
+                    <div class="contact-row">
+                        <div class="contact-item">
+                            <svg class="contact-icon"><use xlink:href="#phone-icon"></svg>
+                            <div>
+                                <h3 data-lang="en">Phone</h3>
+                                <h3 data-lang="tr" class="hidden">Telefon</h3>
+                                <a href="tel:+905497193433">+90 549 719 34 33</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <svg class="contact-icon"><use xlink:href="#email-icon"></svg>
+                            <div>
+                                <h3 data-lang="en">Email</h3>
+                                <h3 data-lang="tr" class="hidden">E-posta</h3>
+                                <a href="mailto:yeditepesevenracing@gmail.com">yeditepesevenracing@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-row">
+                        <div class="contact-item">
+                            <svg class="contact-icon"><use xlink:href="#linkedin-icon"></svg>
+                            <div>
+                                <h3>LinkedIn</h3>
+                                <a href="https://www.linkedin.com/company/yeditepe-university-seven-racing/" target="_blank">Yeditepe University Seven Racing</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <svg class="contact-icon"><use xlink:href="#instagram-icon"></svg>
+                            <div>
+                                <h3>Instagram</h3>
+                                <a href="https://instagram.com/yeditepesevenracing" target="_blank">@yeditepesevenracing</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Yeditepe Seven Racing, Arhan Burak Tüzün</p>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+
+    <!-- Add LinkedIn SVG icon (place before closing body) -->
+    <svg style="display: none;">
+        <symbol id="linkedin-icon" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </symbol>
+    </svg>
+
+    <!-- Add these SVG icons -->
+    <svg style="display: none;">
+        <!-- Phone Icon -->
+        <symbol id="phone-icon" viewBox="0 0 24 24">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 0 1 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </symbol>
+        
+        <!-- Email Icon -->
+        <symbol id="email-icon" viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/>
+        </symbol>
+        
+        <!-- Instagram Icon -->
+        <symbol id="instagram-icon" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+        </symbol>
+    </svg>
+</body>
+</html> 
