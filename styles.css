@@ -455,15 +455,23 @@ button[type="submit"]:hover {
     }
     
     .stats-grid {
-        margin-top: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        padding: 0 1rem;
     }
     
     .stat {
-        padding: 1rem;
+        margin: 0.5rem;
+        padding: 1rem 0.8rem;
+        min-width: unset;
     }
     
     .number {
-        font-size: 2rem;
+        font-size: 1.8rem !important;
+    }
+    
+    .stat span:not(.number) {
+        font-size: 0.8rem !important;
     }
     
     .contact-grid {
@@ -601,6 +609,28 @@ button[type="submit"]:hover {
     /* Özel padding düzenlemeleri */
     .contact-grid .container {
         padding: 0 1rem;
+    }
+}
+
+/* Extra small devices (e.g. Samsung S23) */
+@media (max-width: 400px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
+    
+    .stat {
+        width: 100% !important;
+        max-width: 180px !important;
+        margin: 0.5rem auto !important;
+    }
+    
+    .number {
+        font-size: 1.6rem !important;
+    }
+    
+    .stat span:not(.number) {
+        font-size: 0.75rem !important;
     }
 }
 
@@ -1624,5 +1654,51 @@ html, body {
     /* Eski margin değerlerini sıfırladık */
     #team .container h2[data-lang] {
         margin: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hero text centering fix */
+    .title-container {
+        padding: 0 1rem !important;
+        width: 100vw !important;
+        margin-left: -1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem !important;
+        padding: 0 0.5rem !important;
+        margin: 0 auto 2rem !important;
+        width: 100% !important;
+        word-break: break-word;
+    }
+
+    /* Stats grid centering fix */
+    .stats-grid {
+        justify-content: center !important;
+        margin: 0 auto !important;
+        max-width: 100% !important;
+        padding: 0 0.5rem !important;
+    }
+    
+    .stat {
+        flex: 0 1 160px !important;
+        margin: 0.5rem !important;
+    }
+}
+
+/* Very small screens adjustment */
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: 1.8rem !important;
+        letter-spacing: 0.1em !important;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .stat {
+        max-width: 160px !important;
     }
 }
