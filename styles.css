@@ -1402,7 +1402,24 @@ html, body {
     }
     
     .sponsor-category {
-        font-size: 1.2rem;
+        text-align: center !important;
+        padding: 0 1rem !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100% !important;
+        box-sizing: border-box;
+        font-size: 1.3rem !important; /* Slightly reduced from 1.5rem */
+    }
+    
+    .sponsor-tier {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* Add this to handle long category names */
+    .sponsor-category[data-lang] {
+        word-break: break-word;
+        hyphens: auto;
     }
 }
 
