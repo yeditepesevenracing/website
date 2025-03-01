@@ -25,15 +25,17 @@ body {
     overflow-x: hidden;
 }
 
-/* Tüm section'lar için ortak stil */
-.section {
-    padding: 6rem 0;
-    margin: 0 auto;
+/* Tüm sectionlar için ortak stil */
+.hero,
+.section,
+.footer {
+    padding: 0;
+    margin: 0; /* Varsayılan margin'leri sıfırladık */
 }
 
-/* Hero Section Modernization */
+/* Hero section özel padding */
 .hero {
-    padding: 6rem 0;
+    padding: 8rem 0 5rem; /* Üstte daha fazla boşluk korunsun */
     min-height: 80vh;
     flex-direction: column;
     display: flex;
@@ -180,8 +182,11 @@ body {
 
 /* Team Section Modernization */
 #team {
+    padding: 2rem 0; /* 5rem'den 3rem'e düşürdük */
+    padding-top: 0.5rem;
+    padding-bottom: 1.25rem;
     background: rgba(255,255,255,0.05);
-    padding: 4rem 0;
+    color: #ffffff;
     position: relative;
     z-index: 1;
 }
@@ -268,8 +273,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="transparent"/><path d="M50 0L100 50L50 100L0 50Z" fill="%2308dfbe" opacity="0.05"/></svg>');
-    background-size: 200px;
     z-index: -1;
     mix-blend-mode: normal;
     opacity: 0.05;
@@ -325,10 +328,10 @@ body {
 
 /* Contact Section Modernization */
 #contact {
+    padding: 2rem 0; /* 5rem'den 3rem'e düşürdük */
+    padding-top: 0.5rem;
     background: rgba(255,255,255,0.05);
-    padding: 4rem 0;
-    position: relative;
-    z-index: 1;
+    color: #ffffff; /* Yazı rengini de aynı yapıyoruz */
 }
 
 .contact-grid {
@@ -344,6 +347,7 @@ body {
     gap: 2rem;
     width: 100%;
     max-width: 800px;
+    margin-top: 0; /* Eski 2rem margin'i kaldırdık */
 }
 
 .contact-row {
@@ -431,6 +435,16 @@ button[type="submit"]:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hero,
+    .section,
+    .footer {
+        padding: 0rem 0;
+    }
+    
+    .hero {
+        padding: 6rem 0 3rem;
+    }
+    
     .hero {
         min-height: 70vh;
     }
@@ -471,7 +485,7 @@ button[type="submit"]:hover {
     }
     
     #team {
-        padding: 4rem 0;
+        padding: 0;
     }
     
     .profile-card {
@@ -515,6 +529,10 @@ button[type="submit"]:hover {
     .contact-item {
         width: 100%;
         max-width: none;
+    }
+    
+    .container {
+        padding: 0 1.5rem;
     }
 }
 
@@ -823,11 +841,10 @@ html, body {
 .hero,
 .section,
 .footer {
-    width: 100vw;
     margin-left: calc(-50vw + 50%);
 }
 
-/* Container içi boşluklar */
+/* Fix horizontal overflow */
 .container {
     padding: 0 2rem;
     margin: 0 auto;
@@ -866,8 +883,10 @@ html, body {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    margin-bottom: 4rem;
+    margin: 3rem 0;
     font-family: 'Orbitron', sans-serif;
+    position: relative;
+    padding-top: 1rem;
 }
 
 /* New grid layout for timeline + vehicles */
@@ -875,7 +894,7 @@ html, body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    margin: 4rem 0 2rem;
+    margin: 4rem 0;
     align-items: center;
 }
 
@@ -1017,7 +1036,7 @@ html, body {
 .leadership-scroll {
     display: flex;
     overflow-x: auto;
-    padding: 2rem 0;
+    padding: 1rem 0;
     gap: 2rem;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
@@ -1169,14 +1188,14 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem 0;
+    padding: 0rem 0;
 }
 
 .footer .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100px;
+    min-height: 30px;
 }
 
 /* Complete underline removal */
@@ -1279,6 +1298,7 @@ html, body {
 .sponsor-layout {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 1rem;
 }
 
 .tier-row {
@@ -1362,4 +1382,28 @@ html, body {
     .sponsor-name {
         font-size: 0.7rem;
     }
+}
+
+/* Contact Section */
+#contact {
+    background: rgba(255,255,255,0.05);
+    color: #ffffff; /* Yazı rengini de aynı yapıyoruz */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .section h2 {
+        margin: 2rem 0; /* Mobilde daha küçük boşluk */
+        font-size: 1.8rem;
+    }
+}
+
+/* Leadership scroll padding adjustment */
+.leadership-scroll {
+    padding-top: 1rem; /* Eski 2rem'den 1rem'e düşürdük */
+}
+
+/* Contact info margin adjustment */
+.contact-info {
+    margin-top: 0; /* Eski 2rem margin'i kaldırdık */
 }
