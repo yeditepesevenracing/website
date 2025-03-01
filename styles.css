@@ -485,7 +485,7 @@ button[type="submit"]:hover {
     }
     
     #team {
-        padding: 0;
+        padding: 0 0 2rem 0 !important; /* Alt padding 2rem eklendi */
     }
     
     .profile-card {
@@ -527,12 +527,80 @@ button[type="submit"]:hover {
     }
     
     .contact-item {
+        width: 90% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 1rem !important;
+        box-sizing: border-box;
+    }
+    
+    .contact-info {
         width: 100%;
-        max-width: none;
+        margin-left: 0;
+        padding: 0 1rem !important;
+    }
+    
+    .contact-row {
+        justify-content: center !important;
+    }
+    
+    .contact-item h3 {
+        font-size: 1rem !important;
+    }
+    
+    .contact-item a {
+        font-size: 0.85rem !important;
+    }
+    
+    .contact-item {
+        padding: 0.8rem !important;
+    }
+    
+    .contact-row {
+        gap: 0.8rem !important;
     }
     
     .container {
         padding: 0 1.5rem;
+    }
+    
+    /* Contact grid düzenlemesi */
+    .contact-info {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .contact-row {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+    
+    .contact-item {
+        width: 100% !important;
+        max-width: none !important;
+        padding: 1rem;
+        margin: 0;
+    }
+    
+    /* Yazı boyutu ayarlamaları */
+    .contact-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .contact-item a {
+        font-size: 0.9rem;
+    }
+    
+    /* Icon boyutu ayarı */
+    .contact-icon {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    
+    /* Özel padding düzenlemeleri */
+    .contact-grid .container {
+        padding: 0 1rem;
     }
 }
 
@@ -1277,11 +1345,25 @@ html, body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .sponsor-logos {
-        gap: 1rem;
+        justify-content: center !important;
+        padding-left: 0 !important;
+        scroll-snap-type: none;
+    }
+    
+    .sponsor-tier {
+        padding: 1rem 0 !important;
+        width: 100% !important;
+        min-width: 100% !important;
     }
     
     .sponsor-logo {
-        min-width: 120px;
+        min-width: 90px !important;
+        padding: 0.5rem !important;
+    }
+    
+    .sponsor-tier.diamond .sponsor-logos {
+        flex-wrap: wrap;
+        gap: 1.5rem;
     }
     
     .sponsor-logo img {
@@ -1299,6 +1381,7 @@ html, body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
+    overflow: hidden;
 }
 
 .tier-row {
@@ -1372,6 +1455,7 @@ html, body {
         width: 100%;
         min-width: auto;
         min-height: 150px;
+        padding: 1rem 0.5rem;
     }
     
     .sponsor-logo img {
@@ -1381,6 +1465,40 @@ html, body {
     
     .sponsor-name {
         font-size: 0.7rem;
+    }
+    
+    .sponsor-logos {
+        justify-content: flex-start;
+        padding-left: 1rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .sponsor-logo {
+        min-width: 120px;
+        scroll-snap-align: start;
+    }
+    
+    .sponsor-layout .container {
+        padding: 0 1rem;
+    }
+    
+    .sponsor-logos::-webkit-scrollbar {
+        height: 4px;
+    }
+    
+    .sponsor-logos::-webkit-scrollbar-thumb {
+        background: var(--secondary);
+        border-radius: 2px;
+    }
+}
+
+/* Diamond tier için özel ayar */
+@media (max-width: 768px) {
+    .sponsor-tier.diamond .sponsor-logos {
+        justify-content: center;
+        padding-left: 0;
     }
 }
 
@@ -1406,4 +1524,105 @@ html, body {
 /* Contact info margin adjustment */
 .contact-info {
     margin-top: 0; /* Eski 2rem margin'i kaldırdık */
+}
+
+@media (max-width: 768px) {
+    /* About content grid mobil düzeni */
+    .about-content-grid {
+        grid-template-columns: 1fr !important;
+        margin: 2rem 0 !important;
+    }
+
+    /* Timeline mobil düzeni */
+    .timeline {
+        order: 2;
+        padding: 0 1rem;
+        margin-top: 1.5rem !important;
+    }
+
+    .timeline::before {
+        left: 20px !important;
+    }
+
+    .timeline-item {
+        width: 100% !important;
+        padding-left: 40px !important;
+        text-align: left !important;
+        margin: 0 0 2rem 0 !important;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        margin: 0 0 2rem 0 !important;
+        text-align: left !important;
+    }
+
+    /* Vehicle grid mobil düzeni */
+    .vehicle-grid {
+        order: 3;
+        padding-left: 0 !important;
+        margin: 1rem auto 0 !important;
+        max-width: 100% !important;
+    }
+
+    .vehicle-card {
+        flex-direction: column !important;
+        max-width: 300px !important;
+        margin: 0 auto !important;
+        gap: 0.5rem !important;
+    }
+
+    .vehicle-image {
+        margin-bottom: 0.5rem !important;
+    }
+
+    .vehicle-image img {
+        max-width: 100% !important;
+    }
+
+    .vehicle-specs {
+        text-align: center !important;
+        padding: 0 1rem !important;
+    }
+
+    /* About text düzenlemesi */
+    .about-text {
+        order: 1;
+        margin: 1rem 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-content {
+        max-width: 65vw; /* Maksimum genişlik belirle */
+        word-wrap: break-word; /* Uzun kelimeleri böl */
+        overflow-wrap: break-word; /* Modern tarayıcılar için */
+        padding-right: 1rem !important;
+    }
+    
+    .timeline-year {
+        font-size: 1rem !important; /* Yıl yazı boyutunu küçült */
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.1rem !important; /* Başlık boyutunu ayarla */
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 768px) {
+    #team .container h2 {
+        margin: 1.5rem 0 !important;
+        padding-top: 1.5rem !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        min-height: 80px; /* Minimum yükseklik ekledik */
+    }
+    
+    /* Eski margin değerlerini sıfırladık */
+    #team .container h2[data-lang] {
+        margin: 0 !important;
+    }
 }
