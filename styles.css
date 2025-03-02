@@ -1,8 +1,6 @@
-/* ===== Modern Design Overhaul ===== */
 :root {
     --primary: #22776d;
     --secondary: #08dfbe;
-    --accent: #FF6B6B;
     --dark: #02453d;
     --text-light: #ffffff;
     --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
@@ -16,7 +14,6 @@
     font-display: swap;
 }
 
-/* Base Modernization */
 body {
     font-family: 'Rajdhani', sans-serif;
     background: var(--dark);
@@ -25,25 +22,23 @@ body {
     overflow-x: hidden;
 }
 
-/* Tüm sectionlar için ortak stil */
 .hero,
 .section,
 .footer {
     padding: 0;
-    margin: 0; /* Varsayılan margin'leri sıfırladık */
+    margin: 0;
 }
 
-/* Hero section özel padding */
 .hero {
-    padding: 8rem 0 5rem; /* Üstte daha fazla boşluk korunsun */
+    padding: 8rem 0 5rem;
     min-height: 80vh;
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(45deg, 
-        rgba(2,69,61,0.95),  /* Increased opacity from 0.9 to 0.95 */
-        rgba(2,69,61,0.7)),  /* Darker overlay instead of light accent */
+        rgba(2,69,61,0.95),
+        rgba(2,69,61,0.7)), 
         url('images/background.jpeg') center/cover;
     position: relative;
 }
@@ -128,7 +123,6 @@ body {
     opacity: 0.9;
 }
 
-/* About Section Modernization */
 .about-text {
     background: rgba(255,255,255,0.05);
     padding: 2rem;
@@ -180,9 +174,8 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* Team Section Modernization */
 #team {
-    padding: 2rem 0; /* 5rem'den 3rem'e düşürdük */
+    padding: 2rem 0; 
     padding-top: 0.5rem;
     padding-bottom: 1.25rem;
     background: rgba(255,255,255,0.05);
@@ -196,10 +189,6 @@ body {
     flex-direction: column;
     gap: 3rem;
     margin: 3rem 0;
-}
-
-.leaders-group {
-    margin: 2rem 0;
 }
 
 .section-subtitle {
@@ -219,53 +208,6 @@ body {
     flex-wrap: wrap;
 }
 
-.department-leaders-grid,
-.assistants-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-    align-items: start;
-}
-
-.profile-card {
-    background: linear-gradient(145deg, 
-        rgba(255,255,255,0.05) 0%,
-        rgba(8,223,190,0.02) 100%);
-    border-radius: 20px;
-    border: 1px solid rgba(8,223,190,0.1);
-    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
-    transition: var(--transition);
-    backdrop-filter: blur(5px);
-    transform: translateZ(0);
-    will-change: transform;
-    width: 200px;
-    min-height: auto;
-    padding: 1rem;
-    perspective: unset;
-    transform-style: unset;
-    margin: 0.5rem;
-}
-
-.profile-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(8,223,190,0.15);
-}
-
-.department-group h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--secondary);
-    font-size: 1.3rem;
-    text-align: center;
-    margin: 0.5rem 0 0.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid rgba(8,223,190,0.2);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
-/* Add subtle pattern overlay */
 #team::before {
     content: '';
     position: absolute;
@@ -287,10 +229,6 @@ body {
     margin-bottom: 0.5rem;
 }
 
-.profile-card:hover .card-front img {
-    filter: grayscale(0%);
-}
-
 .card-front h3 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
@@ -300,38 +238,11 @@ body {
     font-size: 0.9rem;
 }
 
-/* Social Section Modernization */
-.instagram-feed {
-    margin: 4rem 0;
-}
-
-.carousel {
-    display: flex;
-    gap: 2rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding: 1rem 0;
-}
-
-.carousel-item {
-    flex: 0 0 300px;
-    height: 300px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 15px;
-    scroll-snap-align: start;
-    transition: var(--transition);
-}
-
-.carousel-item:hover {
-    transform: scale(1.05);
-}
-
-/* Contact Section Modernization */
 #contact {
-    padding: 2rem 0; /* 5rem'den 3rem'e düşürdük */
+    padding: 2rem 0;
     padding-top: 0.5rem;
     background: rgba(255,255,255,0.05);
-    color: #ffffff; /* Yazı rengini de aynı yapıyoruz */
+    color: #ffffff;
 }
 
 .contact-grid {
@@ -347,7 +258,7 @@ body {
     gap: 2rem;
     width: 100%;
     max-width: 800px;
-    margin-top: 0; /* Eski 2rem margin'i kaldırdık */
+    margin-top: 0;
 }
 
 .contact-row {
@@ -433,7 +344,6 @@ button[type="submit"]:hover {
     box-shadow: 0 5px 15px rgba(8,223,190,0.3);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .hero,
     .section,
@@ -493,18 +403,7 @@ button[type="submit"]:hover {
     }
     
     #team {
-        padding: 0 0 2rem 0 !important; /* Alt padding 2rem eklendi */
-    }
-    
-    .profile-card {
-        margin: 0 auto;
-        max-width: 280px;
-        backdrop-filter: none;
-    }
-    
-    .department-group h3 {
-        font-size: 1.2rem;
-        margin: 2rem 0;
+        padding: 0 0 2rem 0 !important;
     }
     
     #team::before {
@@ -513,21 +412,6 @@ button[type="submit"]:hover {
     
     .leaders-row {
         gap: 1.5rem;
-    }
-    
-    .leaders-group {
-        margin: 2rem 0;
-    }
-    
-    .department-leaders-grid,
-    .assistants-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-    
-    .map-container {
-        height: 400px;
     }
     
     .contact-row {
@@ -572,7 +456,6 @@ button[type="submit"]:hover {
         padding: 0 1.5rem;
     }
     
-    /* Contact grid düzenlemesi */
     .contact-info {
         grid-template-columns: 1fr !important;
         gap: 1rem;
@@ -591,7 +474,6 @@ button[type="submit"]:hover {
         margin: 0;
     }
     
-    /* Yazı boyutu ayarlamaları */
     .contact-item h3 {
         font-size: 1.1rem;
     }
@@ -600,19 +482,16 @@ button[type="submit"]:hover {
         font-size: 0.9rem;
     }
     
-    /* Icon boyutu ayarı */
     .contact-icon {
         width: 30px !important;
         height: 30px !important;
     }
     
-    /* Özel padding düzenlemeleri */
     .contact-grid .container {
         padding: 0 1rem;
     }
 }
 
-/* Extra small devices (e.g. Samsung S23) */
 @media (max-width: 400px) {
     .stats-grid {
         grid-template-columns: 1fr;
@@ -634,7 +513,6 @@ button[type="submit"]:hover {
     }
 }
 
-/* Global Animations */
 [data-animate] {
     opacity: 0;
     transform: translateY(30px);
@@ -646,7 +524,6 @@ button[type="submit"]:hover {
     transform: translateY(0);
 }
 
-/* Navigation - Modern Redesign */
 .navbar {
     position: static;
     top: auto;
@@ -689,12 +566,10 @@ button[type="submit"]:hover {
     padding: 0.5rem 0;
 }
 
-/* Remove default list styling */
 .nav-links li {
     list-style: none;
 }
 
-/* Restore hover animation */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -710,7 +585,6 @@ button[type="submit"]:hover {
     width: 100%;
 }
 
-/* Modern Text-based Language Toggle */
 .lang-toggle {
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid var(--secondary);
@@ -730,12 +604,10 @@ button[type="submit"]:hover {
     transform: translateY(-2px);
 }
 
-/* Remove flag emoji styles */
 .lang-toggle[data-lang]::after {
     content: none;
 }
 
-/* Mobile adjustments */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -747,173 +619,16 @@ button[type="submit"]:hover {
     }
 }
 
-/* Flip Cards */
-.profile-card {
-    perspective: unset;
-    transform-style: unset;
-    height: auto;
-    padding: 1rem;
-}
-
-.card-content {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-}
-
-.card-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.25rem;
-    text-align: center;
-}
-
-.member-role {
-    font-size: 0.8rem;
-    margin-bottom: 0.5rem;
-    width: 100%;
-    text-align: center;
-}
-
-.member-program {
-    font-size: 0.8rem;
-    line-height: 1.4;
-    padding: 0 0.5rem;
-    margin-bottom: 0.5rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    width: 100%;
-    text-align: center;
-}
-
-.linkedin-link {
-    margin-top: 0.5rem;
-}
-
-/* Image Size Consistency */
-.card-content img {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 1rem;
-}
-
-/* Responsive Fixes */
-@media (max-width: 768px) {
-    .profile-card {
-        min-height: 280px;
-    }
-    
-    .card-content img {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-/* Unified gap sizes */
-.leaders-row,
-.department-leaders-grid,
-.assistants-grid {
-    gap: 1.5rem !important; /* Force equal gaps */
-    padding: 0 1rem;
-}
-
-/* Card content styling */
-.member-role {
-    color: var(--secondary);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.9rem;
-    margin: 0.5rem 0;
-    text-transform: uppercase;
-}
-
-.member-program {
-    font-size: 0.85rem;
-    opacity: 0.9;
-    text-align: center;
-    margin-bottom: 1rem;
-    flex-grow: 1;
-}
-
-.linkedin-link {
-    margin-top: auto;
-    padding: 0.5rem;
-    transition: var(--transition);
-}
-
 .linkedin-icon {
     width: 24px;
     height: 24px;
     margin-top: 1rem;
 }
 
-.linkedin-link:hover .linkedin-icon {
-    fill: var(--text-light);
-}
-
-/* Card size adjustments */
-.profile-card {
-    margin: 0 !important;
-    width: 100%;
-    max-width: 200px;
-}
-
-/* Grid layout fixes */
-.department-leaders-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-.assistants-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .leaders-row,
-    .department-leaders-grid,
-    .assistants-grid {
-        gap: 1.5rem;
-    }
-    
-    .profile-card {
-        width: 160px;
-        min-height: 280px;
-    }
-}
-
-/* Remove conflicting display: none */
-.navbar.hide,
-.navbar.scrolled {
-    display: block;
-    transform: translateY(-100%);
-}
-
-/* Navbar Scroll Behavior */
 .navbar {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Remove all conflicting navbar hide classes */
-.navbar--hidden {
-    display: none;
-}
-
-.map-container {
-    height: 500px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(8,223,190,0.1);
-}
-
-#contact-map {
-    height: 100%;
-    width: 100%;
-}
-
-/* Ensure only one language is visible */
 [data-lang]:not(.hidden) {
     display: block;
 }
@@ -922,12 +637,10 @@ button[type="submit"]:hover {
     display: none !important;
 }
 
-/* Keep language toggle always visible */
 .lang-toggle {
     display: inline-block !important;
 }
 
-/* Remove body/html margins and ensure full width */
 html, body {
     width: 100%;
     margin: 0;
@@ -935,21 +648,18 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Ensure all sections span full width */
 .hero,
 .section,
 .footer {
     margin-left: calc(-50vw + 50%);
 }
 
-/* Fix horizontal overflow */
 .container {
     padding: 0 2rem;
     margin: 0 auto;
     max-width: 1200px;
 }
 
-/* Remove any accidental padding */
 .navbar,
 .hero-content,
 .contact-grid {
@@ -957,7 +667,6 @@ html, body {
     padding-right: 0;
 }
 
-/* Center stats text */
 .stat {
     text-align: center;
 }
@@ -970,13 +679,11 @@ html, body {
     opacity: 0.9;
 }
 
-/* Team section header fix */
 #team .container h2 {
     text-align: center;
     width: 100%;
 }
 
-/* Global section header styling */
 .section h2 {
     text-align: center;
     text-transform: uppercase;
@@ -987,7 +694,6 @@ html, body {
     padding-top: 1rem;
 }
 
-/* New grid layout for timeline + vehicles */
 .about-content-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -996,7 +702,6 @@ html, body {
     align-items: center;
 }
 
-/* Vehicle image adjustments */
 .vehicle-image img {
     max-width: 80%;
     height: auto;
@@ -1005,7 +710,6 @@ html, body {
     border-radius: 10px;
 }
 
-/* Vehicle grid adjustments */
 .vehicle-grid {
     display: flex;
     flex-direction: column;
@@ -1021,7 +725,6 @@ html, body {
     margin: 0;
 }
 
-/* Responsive design */
 @media (max-width: 1024px) {
     .about-content-grid {
         align-items: stretch;
@@ -1033,104 +736,6 @@ html, body {
     }
 }
 
-/* Force grid items to equal width */
-.department-leaders-grid > *,
-.assistants-grid > * {
-    min-width: 0; /* Prevent overflow */
-}
-
-/* Responsive Fixes */
-@media (min-width: 1024px) {
-    .department-leaders-grid {
-        grid-template-columns: repeat(5, 1fr); /* 5 columns for 5 members */
-        max-width: 1000px;
-    }
-    
-    .profile-card {
-        width: 160px; /* Further reduced size */
-        height: 240px;
-    }
-}
-
-@media (max-width: 1200px) and (min-width: 1024px) {
-    .department-leaders-grid {
-        grid-template-columns: repeat(4, 1fr); /* Fallback for medium screens */
-    }
-}
-
-@media (max-width: 1023px) and (min-width: 768px) {
-    .department-leaders-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 767px) {
-    .department-leaders-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Ensure all cards same width */
-.department-leaders-grid .profile-card {
-    width: 100%;
-    max-width: 180px;
-    margin: 0 auto;
-}
-
-/* Profile Image Sizing */
-.card-content img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top;
-    margin-bottom: 1rem;
-    border: 3px solid var(--secondary);
-}
-
-/* Responsive Image Sizing */
-@media (max-width: 768px) {
-    .card-content img {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-/* Unified grid styling */
-.leaders-row,
-.department-leaders-grid,
-.assistants-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem !important; /* Force equal gaps */
-    justify-content: center;
-}
-
-/* Card size consistency */
-.profile-card {
-    width: 200px;
-    min-height: 240px;
-    margin: 0 !important;
-}
-
-/* Text overflow prevention */
-.member-role {
-    font-size: 0.85rem;
-    line-height: 1.3;
-    padding: 0 0.5rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-/* Equal vertical spacing */
-.leaders-group {
-    margin: 2rem 0 !important;
-}
-
-/* ===== New Horizontal Leadership Section ===== */
 .leadership-scroll {
     display: flex;
     overflow-x: auto;
@@ -1225,7 +830,6 @@ html, body {
     text-decoration: none !important;
 }
 
-/* Scrollbar Styling */
 .leadership-scroll::-webkit-scrollbar {
     height: 8px;
 }
@@ -1253,33 +857,6 @@ html, body {
     }
 }
 
-/* Instagram Widget Styling */
-.instagram-widget-container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(8,223,190,0.1);
-}
-
-.lightwidget-widget {
-    height: 600px;
-    border-radius: 15px;
-}
-
-@media (max-width: 768px) {
-    .lightwidget-widget {
-        height: 400px;
-    }
-}
-
-@media (max-width: 480px) {
-    .lightwidget-widget {
-        height: 300px;
-    }
-}
-
-/* Center Footer Content */
 .footer-content {
     text-align: center;
     display: flex;
@@ -1296,7 +873,6 @@ html, body {
     min-height: 30px;
 }
 
-/* Complete underline removal */
 .linkedin-overlay {
     text-decoration: none !important;
 }
@@ -1305,7 +881,6 @@ html, body {
     text-decoration: none !important;
 }
 
-/* Sponsor Grid */
 .sponsor-grid {
     display: flex;
     flex-direction: column;
@@ -1372,7 +947,6 @@ html, body {
     line-height: 1.3;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .sponsor-logos {
         justify-content: center !important;
@@ -1408,7 +982,7 @@ html, body {
         margin-right: auto !important;
         width: 100% !important;
         box-sizing: border-box;
-        font-size: 1.3rem !important; /* Slightly reduced from 1.5rem */
+        font-size: 1.3rem !important;
     }
     
     .sponsor-tier {
@@ -1416,14 +990,12 @@ html, body {
         padding-right: 0 !important;
     }
     
-    /* Add this to handle long category names */
     .sponsor-category[data-lang] {
         word-break: break-word;
         hyphens: auto;
     }
 }
 
-/* Sponsor Layout */
 .sponsor-layout {
     max-width: 1200px;
     margin: 0 auto;
@@ -1492,7 +1064,6 @@ html, body {
     line-height: 1.2;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .tier-row {
         flex-direction: column;
@@ -1541,7 +1112,6 @@ html, body {
     }
 }
 
-/* Diamond tier için özel ayar */
 @media (max-width: 768px) {
     .sponsor-tier.diamond .sponsor-logos {
         justify-content: center;
@@ -1549,38 +1119,32 @@ html, body {
     }
 }
 
-/* Contact Section */
 #contact {
     background: rgba(255,255,255,0.05);
-    color: #ffffff; /* Yazı rengini de aynı yapıyoruz */
+    color: #ffffff;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
     .section h2 {
-        margin: 2rem 0; /* Mobilde daha küçük boşluk */
+        margin: 2rem 0;
         font-size: 1.8rem;
     }
 }
 
-/* Leadership scroll padding adjustment */
 .leadership-scroll {
-    padding-top: 1rem; /* Eski 2rem'den 1rem'e düşürdük */
+    padding-top: 1rem;
 }
 
-/* Contact info margin adjustment */
 .contact-info {
-    margin-top: 0; /* Eski 2rem margin'i kaldırdık */
+    margin-top: 0;
 }
 
 @media (max-width: 768px) {
-    /* About content grid mobil düzeni */
     .about-content-grid {
         grid-template-columns: 1fr !important;
         margin: 2rem 0 !important;
     }
 
-    /* Timeline mobil düzeni */
     .timeline {
         order: 2;
         padding: 0 1rem;
@@ -1604,7 +1168,6 @@ html, body {
         text-align: left !important;
     }
 
-    /* Vehicle grid mobil düzeni */
     .vehicle-grid {
         order: 3;
         padding-left: 0 !important;
@@ -1632,7 +1195,6 @@ html, body {
         padding: 0 1rem !important;
     }
 
-    /* About text düzenlemesi */
     .about-text {
         order: 1;
         margin: 1rem 0 !important;
@@ -1641,18 +1203,18 @@ html, body {
 
 @media (max-width: 768px) {
     .timeline-content {
-        max-width: 65vw; /* Maksimum genişlik belirle */
-        word-wrap: break-word; /* Uzun kelimeleri böl */
-        overflow-wrap: break-word; /* Modern tarayıcılar için */
+        max-width: 65vw;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
         padding-right: 1rem !important;
     }
     
     .timeline-year {
-        font-size: 1rem !important; /* Yıl yazı boyutunu küçült */
+        font-size: 1rem !important;
     }
     
     .timeline-content h3 {
-        font-size: 1.1rem !important; /* Başlık boyutunu ayarla */
+        font-size: 1.1rem !important;
         line-height: 1.3;
     }
 }
@@ -1665,17 +1227,15 @@ html, body {
         align-items: center;
         justify-content: center;
         height: auto;
-        min-height: 80px; /* Minimum yükseklik ekledik */
+        min-height: 80px;
     }
     
-    /* Eski margin değerlerini sıfırladık */
     #team .container h2[data-lang] {
         margin: 0 !important;
     }
 }
 
 @media (max-width: 768px) {
-    /* Hero text centering fix */
     .title-container {
         padding: 0 1rem !important;
         width: 100vw !important;
@@ -1690,7 +1250,6 @@ html, body {
         word-break: break-word;
     }
 
-    /* Stats grid centering fix */
     .stats-grid {
         justify-content: center !important;
         margin: 0 auto !important;
@@ -1704,7 +1263,6 @@ html, body {
     }
 }
 
-/* Very small screens adjustment */
 @media (max-width: 400px) {
     .hero h1 {
         font-size: 1.8rem !important;
