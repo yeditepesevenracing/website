@@ -496,6 +496,7 @@ button[type="submit"]:hover {
     .stats-grid {
         grid-template-columns: 1fr;
         max-width: 300px;
+        display: flex;
     }
     
     .stat {
