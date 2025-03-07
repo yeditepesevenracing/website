@@ -942,15 +942,56 @@ html, body {
 
 .sponsor-tier {
     background: rgba(255,255,255,0.05);
-    border: 2px solid var(--secondary);
-    border-radius: 15px;
-    padding: 2rem 1rem;
-    box-shadow: 0 0 20px rgba(8,223,190,0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    flex: 1;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    border: 2px solid var(--secondary) !important;
 }
 
-.sponsor-tier.diamond {
-    max-width: 1000px;
-    margin: 0 auto;
+.sponsor-tier.diamond,
+.sponsor-tier.platinum,
+.sponsor-tier.gold,
+.sponsor-tier.silver,
+.sponsor-tier.bronze,
+.sponsor-tier.supporting {
+    border-color: var(--secondary) !important;
+}
+
+.sponsor-tier.diamond .sponsor-category,
+.sponsor-tier.platinum .sponsor-category,
+.sponsor-tier.gold .sponsor-category,
+.sponsor-tier.silver .sponsor-category,
+.sponsor-tier.bronze .sponsor-category,
+.sponsor-tier.supporting .sponsor-category {
+    color: var(--secondary) !important;
+}
+
+/* Tüm sponsor başlıkları için ortak stil */
+.sponsor-tier h3[data-lang="en"], 
+.sponsor-tier h3[data-lang="tr"] {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    color: var(--secondary) !important;
+    font-family: 'Orbitron', sans-serif !important;
+    margin: 0 auto 1.5rem !important;
+    padding: 0 !important;
+    font-size: 1.4rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    font-weight: 700 !important;
+}
+
+/* Gizli elementler için */
+.sponsor-tier h3.hidden {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .sponsor-logos {
@@ -959,14 +1000,6 @@ html, body {
     justify-content: center;
     gap: 2rem;
     padding: 1rem;
-}
-
-.sponsor-category {
-    text-align: center;
-    font-family: 'Orbitron', sans-serif;
-    color: var(--secondary);
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
 }
 
 .sponsor-logo {
@@ -1074,23 +1107,20 @@ html, body {
 
 .sponsor-tier {
     background: rgba(255,255,255,0.05);
-    border: 2px solid var(--secondary);
     border-radius: 12px;
-    padding: 1rem;
+    padding: 1.5rem;
     flex: 1;
     min-height: 200px;
     display: flex;
     flex-direction: column;
     min-width: 300px;
+    border: 2px solid;
 }
 
 .sponsor-category {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
     text-align: center;
-    font-family: 'Orbitron', sans-serif;
-    color: var(--secondary);
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-    flex-shrink: 0;
 }
 
 .sponsor-logos {
@@ -1488,5 +1518,3 @@ html, body {
         padding: 0 10px !important;
     }
 }
-
-/* Masaüstü için özel media query TAMAMEN KALDIRILDI */
