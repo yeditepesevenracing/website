@@ -52,23 +52,51 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
 
-// Initialize Map
-const map = L.map('map').setView([41.015137, 28.979530], 13);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-
 // Navbar Scroll Behavior
 const navbar = document.querySelector('.navbar');
 
-function initContactMap() {
-    const map = L.map('contact-map').setView([40.9818, 29.0573], 17); // Yeditepe University coordinates
+// Slider fonksiyonelliği güncellemesi
+document.addEventListener('DOMContentLoaded', () => {
+    const sliders = document.querySelectorAll('.vehicle-slider');
     
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    sliders.forEach(slider => {
+        const slides = slider.querySelectorAll('.slide');
+        let currentSlide = 0;
+        
+        // İlk slaytı aktif yap
+        slides.forEach((slide, index) => {
+            slide.classList.remove('active');
+            slide.style.opacity = 0;
+        });
+        slides[currentSlide].classList.add('active');
+        slides[currentSlide].style.opacity = 1;
 
-    L.marker([40.9818, 29.0573]).addTo(map)
-        .bindPopup('Yeditepe University<br>Seven Racing Team Headquarters');
-}
+        function showSlide(n) {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                slide.style.opacity = 0;
+            });
+            
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            slides[currentSlide].style.opacity = 1;
+        }
 
-// Initialize map when page loads
-window.addEventListener('load', initContactMap);
+        // Sadece otomatik geçiş kalsın
+        let autoSlide = setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, 5000);
+        
+        // Fareyle üzerine gelince duraklat
+        slider.addEventListener('mouseenter', () => clearInterval(autoSlide));
+        slider.addEventListener('mouseleave', () => {
+            autoSlide = setInterval(() => {
+                showSlide(currentSlide + 1);
+            }, 3000);
+        });
+    });
+});
+
+// Add this to your existing JavaScript
+// Remove the existing click event listener completely
+// Just keep the HTML link with target="_blank"

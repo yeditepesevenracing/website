@@ -66,11 +66,18 @@
                     <span data-lang="tr" class="hidden">Üye</span>
                 </div>
                 <div class="stat">
-                    <span class="number">00+</span>
-                    <span data-lang="en">More number datas...</span>
-                    <span data-lang="tr" class="hidden">Daha fazla sayısal veri...</span>
+                    <span class="number">5</span>
+                    <span data-lang="en">Departments</span>
+                    <span data-lang="tr" class="hidden">Departman</span>
                 </div>
+            </div>
 
+            <!-- Add this button container -->
+            <div class="promo-button-container" data-animate>
+                <a href="sources/Seven_Racing_Promotion_File_2025.pdf" class="promo-button" id="downloadPromo" target="_blank" rel="noopener noreferrer">
+                    <span data-lang="en">Team Promotion File</span>
+                    <span data-lang="tr" class="hidden">Takım Tanıtım Dosyası</span>
+                </a>
             </div>
         </div>
     </section>
@@ -111,15 +118,38 @@
 
                 <div class="vehicle-grid">
                     <div class="vehicle-card" data-animate>
-                        <div class="vehicle-image">
-                            <img src="images/car_2025.jpeg" alt="Current Model" loading="lazy">
+                        <div class="vehicle-image" data-animate>
+                            <div class="vehicle-slider">
+                                <div class="slide active">
+                                    <img src="images/car_2025/1.jpg" alt="Vehicle Front View">
+                                </div>
+                                <div class="slide">
+                                    <img src="images/car_2025/2.jpg" alt="Vehicle Side View">
+                                </div>
+                                <div class="slide">
+                                    <img src="images/car_2025/3.jpg" alt="Vehicle Technical Details">
+                                </div>
+                                <div class="slide">
+                                    <img src="images/car_2025/4.jpg" alt="Vehicle Technical Details">
+                                </div>
+                            </div>
                         </div>
                         <div class="vehicle-specs">
-                            <h3 data-lang="en">"VEHICLE NAME"</h3>
-                            <h3 data-lang="tr" class="hidden">"ARAÇ ADI"</h3>
+                            <h3 data-lang="en">"OUR 2025 VEHICLE"</h3>
+                            <h3 data-lang="tr" class="hidden">"2025 ARACIMIZ"</h3>
                             <ul>
-                                <li>"araçla alakalı info 1 (sürtünme katsayısı, motor gücü, vs.)"</li>
-                                <li>"aracın verimliliğiyle alakalı info?"</li>
+                                <li>
+                                    <span data-lang="en">"Prototype Vehicle"</span>
+                                    <span data-lang="tr" class="hidden">"Prototip Araç"</span>
+                                </li>
+                                <li>
+                                    <span data-lang="en">"Honda GX35 Engine, 35cc, Single Cylinder, 4 stroke, EFI Converted."</span>
+                                    <span data-lang="tr" class="hidden">"Honda GX35 Motoru, 35cc, Tek Silindir, 4 zamanlı, Enjeksiyonlu sisteme dönüştürüldü."</span>
+                                </li>
+                                <li>
+                                    <span data-lang="en">"0.11988 Drag Coefficient"</span>
+                                    <span data-lang="tr" class="hidden">"0.11988 Sürtünme Katsayısı"</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -343,12 +373,12 @@
                                 <span class="sponsor-name">DowAksa</span>
                             </div>
                             <div class="sponsor-logo">
-                                <img src="images/sponsors/cinarlar.png" alt="Çınarlar Motorlu Araçlar">
-                                <span class="sponsor-name">Çınarlar Motorlu Araçlar</span>
-                            </div>
-                            <div class="sponsor-logo">
                                 <img src="images/sponsors/guzelpinar.png" alt="Güzelpınar Su">
                                 <span class="sponsor-name">Güzelpınar Su</span>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="images/sponsors/bias.png" alt="Bias">
+                                <span class="sponsor-name">BIAS Mühendislik</span>
                             </div>
                         </div>
                     </div>
@@ -359,8 +389,16 @@
                         <h3 data-lang="tr" class="sponsor-category hidden">Gümüş Sponsorlar</h3>
                         <div class="sponsor-logos">
                             <div class="sponsor-logo">
-                                <img src="images/sponsors/cet.png" alt="CET">
-                                <span class="sponsor-name">CET</span>
+                                <img src="images/sponsors/cinarlar.png" alt="Çınarlar Motorlu Araçlar">
+                                <span class="sponsor-name">Çınarlar Motorlu Araçlar</span>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="images/sponsors/yilmaztekin.png" alt="Yılmaztekin Grup">
+                                <span class="sponsor-name">Yılmaztekin Grup</span>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="images/sponsors/karaca.png" alt="Karaca Makina">
+                                <span class="sponsor-name">Karaca Makina</span>
                             </div>
                             <div class="sponsor-logo">
                                 <img src="images/sponsors/orbit.png" alt="ORBIT">
@@ -378,12 +416,24 @@
                         <h3 data-lang="tr" class="sponsor-category hidden">Bronz Sponsorlar</h3>
                         <div class="sponsor-logos">
                             <div class="sponsor-logo">
-                                <img src="images/sponsors/yilmaztekin.png" alt="Yılmaztekin Grup">
-                                <span class="sponsor-name">Yılmaztekin Grup</span>
+                                <img src="images/sponsors/cet.png" alt="CET">
+                                <span class="sponsor-name">CET</span>
                             </div>
                             <div class="sponsor-logo">
                                 <img src="images/sponsors/karakoy.png" alt="Karaköy Hırdavat">
                                 <span class="sponsor-name">Karaköy Hırdavat</span>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="images/sponsors/felsensohn.png" alt="Felsensohn">
+                                <span class="sponsor-name">Felsensohn</span>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="images/sponsors/mts.png" alt="MTS">
+                                <span class="sponsor-name">MTS (logo ekle)</span>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="images/sponsors/wurth.png" alt="Würth Türkiye">
+                                <span class="sponsor-name">Würth Türkiye</span>
                             </div>
                         </div>
                     </div>
@@ -396,6 +446,10 @@
                             <div class="sponsor-logo">
                                 <img src="images/sponsors/fev.png" alt="FEV">
                                 <span class="sponsor-name">FEV</span>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="images/sponsors/unlu.png" alt="Ünlü Makina">
+                                <span class="sponsor-name">Ünlü Makina</span>
                             </div>
                         </div>
                     </div>
